@@ -1,11 +1,12 @@
 import 'package:flutter/material.dart';
 
-class MyHomePage extends StatelessWidget {
-  final String text;
-  const MyHomePage({
+class StartScreen extends StatelessWidget {
+  const StartScreen(
+    this.startQuiz, {
     super.key,
-    required this.text,
   });
+
+  final void Function() startQuiz;
 
   @override
   Widget build(BuildContext context) {
@@ -28,8 +29,8 @@ class MyHomePage extends StatelessWidget {
           const SizedBox(
             height: 100,
           ),
-          Text(
-            text,
+          const Text(
+            'Learn Flutter the fun way!',
             style: const TextStyle(
               fontSize: 24,
               color: Colors.white,
@@ -40,7 +41,7 @@ class MyHomePage extends StatelessWidget {
             height: 25,
           ),
           OutlinedButton.icon(
-            onPressed: () {},
+            onPressed: startQuiz,
             style: OutlinedButton.styleFrom(foregroundColor: Colors.white),
             icon: const Icon(Icons.arrow_right_alt),
             label: const Text(
